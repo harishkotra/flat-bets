@@ -4,6 +4,9 @@ Parimutuel prediction markets settled in `$WIF` on Robinhood Chain. Binary marke
 
 Built for the `worldisflat.fun` build round (games category).
 
+<img width="2806" height="2238" alt="screencapture-127-0-0-1-5173-2026-11-12-18_09_19" src="https://github.com/user-attachments/assets/adb7afd3-9383-4a87-ba14-c1c38b6629ed" />
+
+
 ---
 
 ## What is in here
@@ -260,3 +263,25 @@ DRY=1 MARKET=0 npx hardhat run scripts/settle.ts --network robinhood   # print o
 - The committed `web/.env` points at the local fork address, which is only valid while that Anvil instance runs. Re-run `seedfork.ts` on a fresh fork and update the address.
 - Nothing is deployed to mainnet yet: no deployer key holds ETH on Robinhood Chain. `probe.ts` reports the exact funding gap.
 - `settle.ts` and `deploy.ts` are written for mainnet; the fork demo path is `seedfork.ts` + `forkdemo.ts`.
+
+Flat Bets is live on Robinhood Chain testnet (chain 46630).
+
+Contract: https://explorer.testnet.chain.robinhood.com/address/0x08cCcAfC53B7607B0310D6F048a88c7b717ad70e
+WIF token staked and burned by this deployment: https://explorer.testnet.chain.robinhood.com/address/0xb162b86EA11cBe2b39A7B19bBBA1a6Fa2Ab09359
+
+Market creation, 250 WIF burned per market:
+- https://explorer.testnet.chain.robinhood.com/tx/0xb92907069e258054bf988c51e4d07fe9689e349236084942f235cb482951ef34
+- https://explorer.testnet.chain.robinhood.com/tx/0x45f4062360eed5067cd079ebf8416a550a7767d442eff20830e878e3eded17e8
+- https://explorer.testnet.chain.robinhood.com/tx/0x3d27c38ff4d70256ee2cd7135eb2e78da74c49321d74a8777413925e00a70be7
+- https://explorer.testnet.chain.robinhood.com/tx/0x7985f03e89783179121f49078b0e76f4cd12520c9bb006f4e9979c55a6ec9f69
+- https://explorer.testnet.chain.robinhood.com/tx/0x50cf2fc6f1cd0d59729d80dbe801be8ccc4ba5807ae980febecd71a88c32de2a
+- https://explorer.testnet.chain.robinhood.com/tx/0xa1f2ddd829684519bde274416f87f34024945771bcce69dbe34bdf0b04e750b4
+
+Bets placed (2% of every stake burned to 0x000000000000000000000000000000000000dEaD):
+- market 0 side 1 1200.0: https://explorer.testnet.chain.robinhood.com/tx/0x616e55ff7b63dd72c0da08c59118ddcbfd2e7ee11c709f806185888da8d054c3
+- market 0 side 2 800.0: https://explorer.testnet.chain.robinhood.com/tx/0x21492756730a69432a8118379bf969059f24ad5961de3995c56e5d10cd61b806
+- market 0 side 1 450.0: https://explorer.testnet.chain.robinhood.com/tx/0xaf261ab98755b57c343c1791e25c487c6afaa78fcc84531f0e80fe99b61b8611
+- market 1 side 2 900.0: https://explorer.testnet.chain.robinhood.com/tx/0x1df5d53c2de87aa1008df0d0e5b5672e8582f159fc39c5f763a2cbd632267adc
+- market 1 side 2 600.0: https://explorer.testnet.chain.robinhood.com/tx/0x22a848eef1dbdc7f78122c419eac14c7607294fecf1fe03efc3fd418990fc7b8
+
+All 30 transactions from the run, including the full bet set, are listed in contracts/deployments/testnet.json in the repo.
