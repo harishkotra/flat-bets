@@ -1,0 +1,11 @@
+node_modules/
+artifacts/
+cache/
+dist/
+logs/
+.env
+.env.local
+*.log
+probe*.mjs
+.DS_Store
+contracts/deployments/*.keys.json
